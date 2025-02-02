@@ -61,7 +61,7 @@ def get_norm_for_distance(distance):
 # Клавиатура для команды /start
 def start_keyboard():
     return ReplyKeyboardMarkup(
-        [['/start',  '/reset', '/calculate']],
+        [['/reset', '/calculate']],
         one_time_keyboard=True, resize_keyboard=True
     )
 
@@ -193,7 +193,6 @@ def main():
 
     async def set_bot_commands(application):
         commands = [
-            BotCommand("start", "🔄 Запуск / Перезапуск бота"),
             BotCommand("reset", "🔄 Сброс нормовой путёвки"),
             BotCommand("calculate", "💰 Рассчитать зарплату")
         ]
