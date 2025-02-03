@@ -61,7 +61,7 @@ def get_norm_for_distance(distance):
 # Клавиатура для команды /start
 def start_keyboard():
     return ReplyKeyboardMarkup(
-        [['/reset', '/calculate']],
+        [['/start', '/reset', '/calculate']],
         one_time_keyboard=True, resize_keyboard=True
     )
 
@@ -74,7 +74,7 @@ async def start(update: Update, context):
 
     # Проверяем, введена ли нормовая путёвка
     if 'norm' not in context.user_data:
-        await update.message.reply_text('Для установки нормовой пуьтевки, введи число:'
+        await update.message.reply_text('Для установки нормовой путевки, введи число:'
                                         '\n Например 11000',
                                         reply_markup=start_keyboard())
         return WAITING_FOR_NORM
