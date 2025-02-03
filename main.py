@@ -74,7 +74,8 @@ async def start(update: Update, context):
 
     # Проверяем, введена ли нормовая путёвка
     if 'norm' not in context.user_data:
-        await update.message.reply_text('Для установки нормы, введи число:',
+        await update.message.reply_text('Для установки нормовой пуьтевки, введи число:'
+                                        '\n Например 11000',
                                         reply_markup=start_keyboard())
         return WAITING_FOR_NORM
     else:
@@ -91,7 +92,9 @@ async def set_norm(update: Update, context):
 
         await update.message.reply_text(f'Норма установлена: {int(norm)}. Вводи расстояние и воза через пробел'
                                         f'\nПример: 2.2 10'
-                                        f'\n\nУ тебя больше чем одно расстояние? Добавь с нового абзаца.',
+                                        f'\n\nУ тебя больше чем одно расстояние? Добавь с нового абзаца.'
+                                        f'\n Н-р: 5.5 10'
+                                        f'\n      3.2 15',
                                         reply_markup=start_keyboard(), )
         return WAITING_FOR_DISTANCE_AND_VOZ
     except ValueError:
