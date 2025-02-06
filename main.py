@@ -177,7 +177,7 @@ async def reset_norm(update: Update, context):
 
 # Основная функция
 def main():
-    application = Application.builder().token("7773666339:AAFLJym_g7H13VqEq7g3wCaV8j7co9pWfh4").build()
+    application = Application.builder().token("").build()
 
     conversation_handler = ConversationHandler(
         entry_points=[CommandHandler('start', start)],
